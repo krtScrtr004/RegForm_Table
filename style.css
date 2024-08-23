@@ -23,6 +23,11 @@ main,
 #left-panel {
     flex: 2;
     background-color:  #FEE715;
+    background-image: url('img/codng_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
     display: flex;
     justify-content: center;
     align-items: center;
