@@ -1,4 +1,39 @@
 html, body {
     height: 100%;
+    margin: 0 auto;
 }
 
+main, #wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: green;
+}
+
+#wrapper {
+    display: flex;
+}
+
+#left-panel {
+    flex: 2;
+    background-color: blue;
+}
+
+#right-panel {
+    flex: 1;
+    background-color: yellow;
+}
+
+@media only screen and (min-width: 768px) {
+    #left-panel {
+        flex: 1.5;
+        background-color: blue;
+    }
+    
+    #right-panel {
+        flex: 1;
+        background-color: yellow;
+    }
+}
