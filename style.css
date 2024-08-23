@@ -11,7 +11,6 @@ main,
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: green;
 }
 
 #wrapper {
@@ -24,7 +23,7 @@ main,
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 2em;
+    padding: 2em 2em;
 }
 
 .detail {
@@ -57,6 +56,45 @@ main,
 #right-panel {
     flex: 1;
     background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right-panel>form {
+    width: 80%;
+    padding: 2em 2em;
+}
+
+#right-panel>form>fieldset {
+    border: none;
+    padding: 0;
+}
+
+#right-panel>form>fieldset legend {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#right-panel>form>fieldset div {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1rem 0;
+}
+
+#right-panel>form>fieldset label {
+    height: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+#right-panel>form>fieldset input {
+    height: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4em;
 }
 
 @media only screen and (max-width: 992px) {
