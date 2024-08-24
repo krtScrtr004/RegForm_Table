@@ -283,7 +283,11 @@ th {
     }
 
     th {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    td {
+        font-size: 0.7rem;
     }
 
     #modal>section>table caption {
