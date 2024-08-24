@@ -42,7 +42,7 @@
     padding: 8px;
 }
 
-#modal>section>table>tbody>tr>td:nth-child(odd) {
+#modal>section>table>tbody>tr:nth-child(odd) {
     background-color: #1d2630;
 }
 
@@ -63,11 +63,6 @@ thead {
     color: #101820;
     box-shadow: 0 0 2px rgba(178, 177, 177, 0.8);
     font-weight: 500;
-}
-
-#modal>section>table>tbody>tr:hover td:nth-child(odd) {
-    color: white;
-    box-shadow: 0 0 5px rgba(178, 177, 177, 0.8);
 }
 
 #modal>section>table td:last-child {
