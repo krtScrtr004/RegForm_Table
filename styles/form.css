@@ -131,6 +131,7 @@ main,
 
 #right-panel>form>fieldset input {
     padding: 0.4em;
+    transition: box-shadow 200ms linear;
 }
 
 
@@ -151,11 +152,14 @@ main,
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 400;
+    transition: background-color 200ms linear 50ms,
+        color 200ms linear 50ms,
+        box-shadow 200ms linear 50ms;
 }
 
 #right-panel>form>fieldset a:hover {
     background-color: #cdba0d;
-    color: rgb(91, 90, 90);
+    color: rgb(208, 206, 206);
     opacity: 1;
     box-shadow: 0 2px 5px rgba(178, 177, 177, 0.8);
 }

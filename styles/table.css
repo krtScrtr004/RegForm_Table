@@ -98,6 +98,7 @@ thead {
     border-top-right-radius: 5px;
     padding: 0 0.4em;
     z-index: 3;
+    transition: background-color 200ms linear 50ms;
 }
 
 .close-btn:hover {
