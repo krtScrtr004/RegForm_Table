@@ -15,14 +15,11 @@ This repository contains a sample website that demonstrates the creation of a us
 __*Content Images:*__
 
   *Big screens:*
+  
   ![Registration section for big screens](screenshot/big-form.png)
 
   ![Table section for big screens](screenshot/big-tbl.png)
   
   *Small screens:*
   
-  ![Registration section for small screens(1)](screenshot/small-form1.png)
-  
-  ![Registration section for small screens(2)](screenshot/smaill-form2.png)
-  
-  ![Table section for small screens](screenshot/small-tbl.png)
+  ![Registration section for small screens(1)](screenshot/small-form1.png) ![Registration section for small screens(2)](screenshot/small-form2.png) ![Table section for small screens](screenshot/small-tbl.png)
