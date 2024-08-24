@@ -137,7 +137,7 @@ main,
 
 #right-panel>form>fieldset input:focus {
     outline: none;
-    box-shadow: 0 2px 5px rgba(178, 177, 177, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 #right-panel>form>fieldset a {
@@ -161,7 +161,7 @@ main,
     background-color: #cdba0d;
     color: rgb(208, 206, 206);
     opacity: 1;
-    box-shadow: 0 2px 5px rgba(178, 177, 177, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 @media only screen and (max-width: 992px) {
