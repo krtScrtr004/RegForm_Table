@@ -14,6 +14,7 @@ main,
     bottom: 0;
 }
 
+/* REGISTRATION PAGE */
 #wrapper {
     display: flex;
     min-height: 700px;
@@ -22,7 +23,7 @@ main,
 /* LEFT PANEL */
 #left-panel {
     flex: 2;
-    background-color:  #FEE715;
+    background-color: #FEE715;
     background-image: url('img/codng_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -102,36 +103,130 @@ main,
 }
 
 #right-panel>form>fieldset input,
-#right-panel>form>fieldset button {
+#right-panel>form>fieldset a {
     height: 1.5rem;
     border: none;
     border-radius: 5px;
+}
+
+#right-panel>form>fieldset input {
     padding: 0.4em;
 }
+
 
 #right-panel>form>fieldset input:focus {
     outline: none;
     box-shadow: 0 2px 5px rgba(178, 177, 177, 0.8);
 }
 
-
-#right-panel>form>fieldset button {
+#right-panel>form>fieldset a {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 1rem;
-    background-color:  #FEE715;
+    background-color: #FEE715;
     color: white;
+    text-decoration: none;
     font-size: 1.2rem;
     font-weight: 400;
 }
 
-#right-panel>form>fieldset button:hover {
+#right-panel>form>fieldset a:hover {
     background-color: #cdba0d;
     color: rgb(91, 90, 90);
     opacity: 1;
     box-shadow: 0 2px 5px rgba(178, 177, 177, 0.8);
 }
 
+/* TABLE MODAL */
+#modal,
+#modal>section,
+#modal>section>table {
+    border-radius: 5px;
+}
+
+#modal {
+    width: 90%;
+    height: 90%;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(210, 33%, 9%);
+    z-index: 1;
+    box-shadow: 0 0 2px rgba(178, 177, 177, 0.8);
+}
+
+#modal:target {
+    display: block;
+}
+
+#modal>section>table {
+    width: 100%;
+    height: auto;
+    color: white;
+    table-layout: fixed;
+}
+
+thead, tbody {
+    display: contents; 
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px; 
+    text-align: center; 
+}
+
+th {
+    font-size: 1rem;
+}
+
+#modal>section>table caption {
+    position: relative;
+    background-color: #FEE715;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0.5rem;
+    padding: 0.2em 0;
+    font-size: 1.5rem;
+    overflow: hidden;
+}
+
+.caption-txt {
+    color: #101820;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 5px;
+    padding: 0 0.4em;
+}
+
+.close-btn:hover {
+    background-color: red;
+}
+
+.close-btn:active {
+    background-color: rgb(204, 1, 1);
+}
+
+#modal>section>table>caption>a {
+    color: #101820;
+    text-decoration: none;
+}
+
+#modal>section>table>caption>a:hover {
+    color: white;
+    text-decoration: none;
+}
 
 @media only screen and (max-width: 992px) {
     #left-panel {
@@ -159,6 +254,14 @@ main,
         flex: 1;
     }
 
+    th {
+        font-size: 0.6rem;
+    }
+
+    #modal>section>table caption {
+        font-size: 1rem;
+    }
+    
 }
 
 @media only screen and (max-width: 768px) {
