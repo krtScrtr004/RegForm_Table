@@ -1,0 +1,134 @@
+/* TABLE MODAL */
+#modal,
+#modal>section,
+#modal>section>table {
+    height: auto;
+    max-height: 80%;
+    border-radius: 5px;
+}
+
+#modal {
+    width: 90%;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(210, 33%, 9%);
+    z-index: 1;
+    box-shadow: 0 0 2px rgba(178, 177, 177, 0.8);
+    overflow-y: auto;
+}
+
+#modal:target {
+    display: block;
+}
+
+#modal>section>table {
+    width: 100%;
+    height: auto;
+    color: white;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#modal>section>table>thead,
+#modal>section>table>tbody {
+    display: contents;
+}
+
+#modal>section>table>thead>th,
+#modal>section>table>tbody>tr>td {
+    padding: 8px;
+}
+
+#modal>section>table>tbody>tr>td:nth-child(odd) {
+    background-color: #1d2630;
+}
+
+thead {
+    box-shadow: 0 2px 2px rgba(178, 177, 177, 0.8);
+}
+
+#modal>section>table>thead>th {
+    background-color: #171e25;
+    border-top: 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#modal>section>table>tbody tr:hover {
+    background-color: #FEE715;
+    color: #101820;
+    box-shadow: 0 0 2px rgba(178, 177, 177, 0.8);
+    font-weight: 500;
+}
+
+#modal>section>table>tbody>tr:hover td:nth-child(odd) {
+    color: white;
+    box-shadow: 0 0 5px rgba(178, 177, 177, 0.8);
+}
+
+#modal>section>table td:last-child {
+    text-align: right;
+}
+
+#modal>section>table caption {
+    position: relative;
+    background-color: #FEE715;
+    border-radius: 5px 5px 0 0;
+    padding: 0.2em 0;
+    font-size: 1.5rem;
+    overflow: hidden;
+
+}
+
+.caption-txt {
+    color: #101820;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 5px;
+    padding: 0 0.4em;
+    z-index: 3;
+}
+
+.close-btn:hover {
+    background-color: red;
+}
+
+.close-btn:active {
+    background-color: rgb(204, 1, 1);
+}
+
+#modal>section>table>caption>a {
+    color: #101820;
+    text-decoration: none;
+}
+
+#modal>section>table>caption>a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 992px) {
+    th {
+        font-size: 0.8rem;
+    }
+
+    td {
+        font-size: 0.7rem;
+    }
+
+    #modal>section>table caption {
+        font-size: 1rem;
+    }
+
+}
