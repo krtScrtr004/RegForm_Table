@@ -190,6 +190,8 @@ main,
     width: 100%;
     height: auto;
     color: white;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
 thead,
@@ -199,28 +201,45 @@ tbody {
 
 th,
 td {
-    border: 1px solid white;
     padding: 8px;
 }
 
+td:nth-child(odd) {
+    background-color: #1d2630;
+}
+
 th {
+    background-color: #171e25;
+    border-top: 0;
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
 }
 
+#modal>section>table>tbody tr:hover {
+    background-color: #FEE715;
+    color: #101820;
+    box-shadow: 0 0 5px rgba(178, 177, 177, 0.8);
+    font-weight: 500;
+}
+
+#modal>section>table>tbody>tr:hover td:nth-child(odd) {
+    color: white;
+    box-shadow: 0 0 5px rgba(178, 177, 177, 0.8);
+}
+
 #modal>section>table td:last-child {
-    text-align: right;  
+    text-align: right;
 }
 
 #modal>section>table caption {
     position: relative;
     background-color: #FEE715;
     border-radius: 5px 5px 0 0;
-    margin-bottom: 0.5rem;
     padding: 0.2em 0;
     font-size: 1.5rem;
     overflow: hidden;
+
 }
 
 .caption-txt {
@@ -236,6 +255,7 @@ th {
     align-items: center;
     border-top-right-radius: 5px;
     padding: 0 0.4em;
+    z-index: 3;
 }
 
 .close-btn:hover {
