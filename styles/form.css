@@ -37,6 +37,7 @@ main,
 /* REGISTRATION PAGE */
 #wrapper {
     display: flex;
+    min-width: 320px;
     min-height: 700px;
 }
 
@@ -66,19 +67,19 @@ main,
     align-items: center;
 }
 
-.logo img {
+.logo>img {
     width: 100%;
     height: auto;
     margin-right: 10px;
 }
 
-.txt h1 {
+.txt>h1 {
     font-size: 5rem;
     font-weight: 900;
 }
 
-.txt h1,
-.txt p {
+.txt>h1,
+.txt>p {
     color: #101820;
     margin: 0 auto;
 }
@@ -103,12 +104,12 @@ main,
     padding: 0;
 }
 
-#right-panel>form>fieldset legend {
+#right-panel>form>fieldset>legend {
     font-size: 2rem;
     font-weight: 700;
 }
 
-#right-panel>form>fieldset div {
+#right-panel>form>fieldset>div {
     display: grid;
     grid-template-columns: 1fr;
     margin: 1rem 0;
@@ -118,8 +119,8 @@ main,
     height: 1.5rem;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 #right-panel>form>fieldset input,
@@ -173,16 +174,16 @@ main,
         flex-direction: column;
     }
 
-    .logo img {
+    .logo>img {
         width: 200px;
     }
 
-    .txt h1,
-    .txt p {
+    .txt>h1,
+    .txt>p {
         text-align: center;
     }
 
-    .txt h1 {
+    .txt>h1 {
         font-size: 3rem;
     }
 

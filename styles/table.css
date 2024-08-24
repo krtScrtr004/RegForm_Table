@@ -61,12 +61,12 @@
     background-color: #1d2630;
 }
 
-thead {
+#modal>section>table>thead {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
     z-index: 2;
 }
 
-#modal>section>table>thead>th {
+#modal>section>table>thead th {
     background-color: #171e25;
     border-top: 0;
     text-align: center;
@@ -74,7 +74,7 @@ thead {
     font-weight: 500;
 }
 
-#modal>section>table>tbody tr:hover {
+#modal>section>table>tbody>tr:hover {
     background-color: #FEE715;
     color: #101820;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
@@ -85,14 +85,13 @@ thead {
     text-align: right;
 }
 
-#modal>section>table caption {
+#modal>section>table>caption {
     position: relative;
     background-color: #FEE715;
     border-radius: 5px 5px 0 0;
     padding: 0.2em 0;
     font-size: 1.5rem;
     overflow: hidden;
-
 }
 
 .caption-txt {
@@ -131,16 +130,15 @@ thead {
 }
 
 @media only screen and (max-width: 992px) {
-    th {
-        font-size: 0.8rem;
+    #modal>section>table>thead th {
+        font-size: 0.9rem;
     }
 
-    td {
-        font-size: 0.7rem;
+    #modal>section>table>tbody td {
+        font-size: 0.8rem;
     }
 
     #modal>section>table caption {
         font-size: 1rem;
     }
-
 }
