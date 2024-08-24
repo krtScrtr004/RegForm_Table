@@ -1,3 +1,23 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #666666;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 html,
 body {
     height: 100%;
@@ -144,12 +164,13 @@ main,
 #modal,
 #modal>section,
 #modal>section>table {
+    height: auto;
+    max-height: 80%;
     border-radius: 5px;
 }
 
 #modal {
     width: 90%;
-    height: 90%;
     display: none;
     position: fixed;
     top: 50%;
@@ -158,6 +179,7 @@ main,
     background-color: hsl(210, 33%, 9%);
     z-index: 1;
     box-shadow: 0 0 2px rgba(178, 177, 177, 0.8);
+    overflow-y: auto;
 }
 
 #modal:target {
@@ -168,21 +190,27 @@ main,
     width: 100%;
     height: auto;
     color: white;
-    table-layout: fixed;
 }
 
-thead, tbody {
-    display: contents; 
+thead,
+tbody {
+    display: contents;
 }
 
-th, td {
+th,
+td {
     border: 1px solid white;
-    padding: 8px; 
-    text-align: center; 
+    padding: 8px;
 }
 
 th {
+    text-align: center;
     font-size: 1rem;
+    font-weight: 500;
+}
+
+#modal>section>table td:last-child {
+    text-align: right;  
 }
 
 #modal>section>table caption {
@@ -261,7 +289,7 @@ th {
     #modal>section>table caption {
         font-size: 1rem;
     }
-    
+
 }
 
 @media only screen and (max-width: 768px) {
