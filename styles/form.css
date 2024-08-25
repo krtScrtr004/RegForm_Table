@@ -134,7 +134,7 @@ main,
 }
 
 .form-wrapper input {
-    max-width: 100%;
+    width: auto;
     padding: 0.4em;
     transition: box-shadow 200ms linear;
 }
