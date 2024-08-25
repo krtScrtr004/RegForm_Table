@@ -131,11 +131,11 @@
 
 @media only screen and (max-width: 992px) {
     #modal>section>table>thead th {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     #modal>section>table>tbody td {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     #modal>section>table caption {
