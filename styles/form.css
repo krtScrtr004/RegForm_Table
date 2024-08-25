@@ -100,7 +100,9 @@ main,
 }
 
 #right-panel>form>fieldset {
+    width: 100%;
     border: none;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -109,40 +111,45 @@ main,
     font-weight: 700;
 }
 
-#right-panel>form>fieldset>div {
+.form-wrapper {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    margin: 1rem 0;
 }
 
-#right-panel>form>fieldset label {
+.form-wrapper label {
     height: 1.5rem;
     border: none;
     border-radius: 5px;
+    margin-top: 1rem;
     font-size: 0.9rem;
     font-weight: 400;
 }
 
-#right-panel>form>fieldset input,
-#right-panel>form>fieldset a {
-    width: 100%;
+.form-wrapper input,
+.form-wrapper a {
     height: 1.5rem;
     border: none;
     border-radius: 5px;
 }
 
-#right-panel>form>fieldset input {
+.form-wrapper input {
+    max-width: 100%;
     padding: 0.4em;
     transition: box-shadow 200ms linear;
 }
 
 
-#right-panel>form>fieldset input:focus {
+.form-wrapper input:focus {
     outline: none;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
-#right-panel>form>fieldset a {
+.button {
+    margin-top: 1rem;
+}
+
+.form-wrapper a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -159,7 +166,7 @@ main,
         box-shadow 200ms linear 50ms;
 }
 
-#right-panel>form>fieldset a:hover {
+.form-wrapper a:hover {
     background-color: #cdba0d;
     color: rgb(208, 206, 206);
     opacity: 1;
