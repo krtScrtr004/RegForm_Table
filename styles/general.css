@@ -6,6 +6,9 @@
 :root {
     --primary-yellow-color: #FEE715;
     --secondary-black-color: #101820;
+
+    margin: 0;
+    padding: 0;
 }
 
 :root,
