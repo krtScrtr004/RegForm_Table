@@ -53,10 +53,10 @@ main,
     font-weight: 900;
 }
 
-.txt>p {
-    line-height: 1.5rem;
+    .txt>p {
+        line-height: 1.5rem;
 
-}
+    }
 
 .txt>h1,
 .txt>p {
