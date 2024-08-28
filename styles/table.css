@@ -43,7 +43,7 @@
     width: 100%;
     height: auto;
     color: white;
-    table-layout: fixed;
+    table-layout: auto;
     border-collapse: collapse;
 }
 
@@ -54,7 +54,8 @@
 
 #modal>section>table>thead>th,
 #modal>section>table>tbody>tr>td {
-    padding: 8px;
+    min-width: 3rem;
+    padding: 0.8em;
 }
 
 #modal>section>table>tbody>tr:nth-child(odd) {
@@ -75,8 +76,8 @@
 }
 
 #modal>section>table>tbody>tr:hover {
-    background-color: #FEE715;
-    color: #101820;
+    background-color: var(--primary-yellow-color);
+    color: var(--secondary-black-color);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     font-weight: 500;
 }
@@ -87,7 +88,7 @@
 
 #modal>section>table>caption {
     position: relative;
-    background-color: #FEE715;
+    background-color: var(--primary-yellow-color);
     border-radius: 5px 5px 0 0;
     padding: 0.2em 0;
     font-size: 1.5rem;
@@ -95,7 +96,7 @@
 }
 
 .caption-txt {
-    color: #101820;
+    color: var(--secondary-black-color);
 }
 
 .close-btn {
@@ -131,6 +132,7 @@
 
 @media only screen and (max-width: 992px) {
     #modal>section>table>thead th {
+        padding: 0.5em;
         font-size: 0.8rem;
     }
 

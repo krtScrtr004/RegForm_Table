@@ -1,0 +1,41 @@
+@font-face {
+    font-family: Roboto;
+    src: url(font/Roboto-Regular.ttf) format('truetype');
+}
+
+:root {
+    --primary-yellow-color: #FEE715;
+    --secondary-black-color: #101820;
+
+    margin: 0;
+    padding: 0;
+}
+
+:root,
+body {
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #666666;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
