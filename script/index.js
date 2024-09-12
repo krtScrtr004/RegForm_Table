@@ -1,43 +1,54 @@
-// Change the algorithm of how the modal is displayed to js
-// Create a handler when there is an error, do not allow display the modal
-
 let errorMsg = "";
 
+// Event handlers
+const MODAL = document.querySelector("#modal");
+
 // Event handler when submit button is clicked
-document.querySelector("#submit_btn").addEventListener("click", () => {
-	const FNAME = document.querySelector('#fName').value;
-	const LNAME = document.querySelector('#lName').value;
+document.querySelector("#submit_btn").addEventListener("click", (event) => { 
+	event.preventDefault();	// Prevent the form from being submitted
 
-	validateFname(FNAME);
-	validateLname(LNAME);
+  const FNAME = document.querySelector("#fName").value;
+  const LNAME = document.querySelector("#lName").value;
 
-	const BDATE = document.querySelector('#bDate').valueAsDate;
-	if (BDATE) {
-			const BDATE_DAY = bDate.getDate();
-			const BDATE_MONTH = bDate.getMonth() + 1;
-			const BDATE_YEAR = bDate.getFullYear();
-			
-			validateBdate(BDATE_DAY, BDATE_MONTH, BDATE_YEAR);
-	} else {
-		errorMsg += `Invalid date format`;
-	}
+  validateFname(FNAME);
+  validateLname(LNAME);
 
-	const EMAIL = document.querySelector('#email').value;
-	const PASSWORD = document.querySelector('#pass').value;
-	const C_PASSWORD = document.querySelector('#cPass').value;
+  const BDATE = document.querySelector("#bDate").valueAsDate;
+  if (BDATE) {
+    const BDATE_DAY = BDATE.getDate();
+    const BDATE_MONTH = BDATE.getMonth() + 1;
+    const BDATE_YEAR = BDATE.getFullYear();
 
-	validateEmail(EMAIL);
-	validatePassword(PASSWORD);
-	
-	if (PASSWORD.localeCompare(C_PASSWORD) !== 0) {
-			errorMsg += "Passwords do not match. \n";
-	}
+    validateBdate(BDATE_DAY, BDATE_MONTH, BDATE_YEAR);
+  } else {
+    errorMsg += `Invalid date format`;
+  }
 
-	if (errorMsg.length > 0) {
-			alert(errorMsg);
+  const EMAIL = document.querySelector("#email").value;
+  const PASSWORD = document.querySelector("#pass").value;
+  const C_PASSWORD = document.querySelector("#cPass").value;
+
+  validateEmail(EMAIL);
+  validatePassword(PASSWORD);
+
+  if (PASSWORD.localeCompare(C_PASSWORD) !== 0) {
+    errorMsg += "Passwords do not match. \n";
+  }
+
+  if (errorMsg.length > 0) {
+    alert(`Errors:\n${errorMsg}`);
+  } else {
+		MODAL.style.display = "block";
 	}
 });
 
+// Modal close button
+document.querySelector('.close-btn').addEventListener('click', function() {
+  MODAL.style.display = 'none';
+	location.reload();
+});
+
+// UTILITY FUNCTIONS
 
 const ALLOWED_NAME_CHARS = /^[a-zA-Z\s'-]+$/; // Allow only letters, spaces, hyphens, and apostrophes
 
@@ -96,45 +107,46 @@ function validateBdate(DAY, MONTH, YEAR) {
 
 // Email validation
 function validateEmail(EMAIL) {
-  const MIN = 12, MAX = 320;
-	const EMAIL_PATTERN = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const MIN = 12,
+    MAX = 320;
+  const EMAIL_PATTERN = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-	if (EMAIL.length < MIN || EMAIL.length > MAX) {
+  if (EMAIL.length < MIN || EMAIL.length > MAX) {
     errorMsg += `Email should be between ${MIN} and ${MAX} characters long. \n`;
   }
 
-	if (!EMAIL_PATTERN.test(EMAIL)) {
+  if (!EMAIL_PATTERN.test(EMAIL)) {
     errorMsg += "Invalid email format. \n";
   }
 }
 
 // Password validation
 function validatePassword(PASSWORD) {
-	const MIN = 8;
-	const MAX = 64;
-	
-	if (PASSWORD.length < MIN || PASSWORD.length > MAX) {
-			errorMsg += `Password must be between ${MIN} and ${MAX} characters. \n`;
-	}
+  const MIN = 8;
+  const MAX = 64;
 
-	const LOW_CASE = /[a-z]/;
-	const UP_CASE = /[A-Z]/;
-	const NUMBERS = /[0-9]/;
-	const SPECIAL_CHARS = /[!@#\$%\^&\*\(\)_\+\-=\[\]\{\};:'",<>\.\/?\\|`~]/;
+  if (PASSWORD.length < MIN || PASSWORD.length > MAX) {
+    errorMsg += `Password must be between ${MIN} and ${MAX} characters. \n`;
+  }
 
-	if (!LOW_CASE.test(PASSWORD)) {
-		errorMsg += 'Password must contain at least one lowercase letter. \n';
-	}
+  const LOW_CASE = /[a-z]/;
+  const UP_CASE = /[A-Z]/;
+  const NUMBERS = /[0-9]/;
+  const SPECIAL_CHARS = /[!@#\$%\^&\*\(\)_\+\-=\[\]\{\};:'",<>\.\/?\\|`~]/;
 
-	if (!UP_CASE.test(PASSWORD)) {
-		errorMsg += 'Password must contain at least one uppercase letter. \n';
-	}
+  if (!LOW_CASE.test(PASSWORD)) {
+    errorMsg += "Password must contain at least one lowercase letter. \n";
+  }
 
-	if (!NUMBERS.test(PASSWORD)) {
-		errorMsg += 'Password must contain at least one number. \n';
-	}
+  if (!UP_CASE.test(PASSWORD)) {
+    errorMsg += "Password must contain at least one uppercase letter. \n";
+  }
 
-	if (!SPECIAL_CHARS.test(PASSWORD)) {
-		errorMsg += 'Password must contain at least one special character. \n';
-	}
+  if (!NUMBERS.test(PASSWORD)) {
+    errorMsg += "Password must contain at least one number. \n";
+  }
+
+  if (!SPECIAL_CHARS.test(PASSWORD)) {
+    errorMsg += "Password must contain at least one special character. \n";
+  }
 }
