@@ -4,7 +4,40 @@
 let errorMsg = "";
 
 // Event handler when submit button is clicked
-document.querySelectorAll(".button").addEventListener("click", () => {});
+document.querySelector("#submit_btn").addEventListener("click", () => {
+	const FNAME = document.querySelector('#fName').value;
+	const LNAME = document.querySelector('#lName').value;
+
+	validateFname(FNAME);
+	validateLname(LNAME);
+
+	const BDATE = document.querySelector('#bDate').valueAsDate;
+	if (BDATE) {
+			const BDATE_DAY = bDate.getDate();
+			const BDATE_MONTH = bDate.getMonth() + 1;
+			const BDATE_YEAR = bDate.getFullYear();
+			
+			validateBdate(BDATE_DAY, BDATE_MONTH, BDATE_YEAR);
+	} else {
+		errorMsg += `Invalid date format`;
+	}
+
+	const EMAIL = document.querySelector('#email').value;
+	const PASSWORD = document.querySelector('#pass').value;
+	const C_PASSWORD = document.querySelector('#cPass').value;
+
+	validateEmail(EMAIL);
+	validatePassword(PASSWORD);
+	
+	if (PASSWORD.localeCompare(C_PASSWORD) !== 0) {
+			errorMsg += "Passwords do not match. \n";
+	}
+
+	if (errorMsg.length > 0) {
+			alert(errorMsg);
+	}
+});
+
 
 const ALLOWED_NAME_CHARS = /^[a-zA-Z\s'-]+$/; // Allow only letters, spaces, hyphens, and apostrophes
 
@@ -16,7 +49,7 @@ function validateFname(NAME) {
     errorMsg += `First Name should be between ${MIN} and ${MAX} characters long. \n`;
   }
 
-  if (ALLOWED_NAME_CHARS.test(NAME)) {
+  if (!ALLOWED_NAME_CHARS.test(NAME)) {
     errorMsg += "First Name contains disallowed characters. \n";
   }
 }
@@ -29,7 +62,7 @@ function validateLname(NAME) {
     errorMsg += `Last Name should be between ${MIN} and ${MAX} characters long. \n`;
   }
 
-  if (ALLOWED_NAME_CHARS.test(NAME)) {
+  if (!ALLOWED_NAME_CHARS.test(NAME)) {
     errorMsg += "Last Name contains disallowed characters. \n";
   }
 }
@@ -80,8 +113,8 @@ function validatePassword(PASSWORD) {
 	const MIN = 8;
 	const MAX = 64;
 	
-	if (PASSWORD.length < MIN_LENGTH || PASSWORD.length > MAX_LENGTH) {
-			alert(`Password must be between ${MIN} and ${MAX} characters.`);
+	if (PASSWORD.length < MIN || PASSWORD.length > MAX) {
+			errorMsg += `Password must be between ${MIN} and ${MAX} characters. \n`;
 	}
 
 	const LOW_CASE = /[a-z]/;
@@ -90,18 +123,18 @@ function validatePassword(PASSWORD) {
 	const SPECIAL_CHARS = /[!@#\$%\^&\*\(\)_\+\-=\[\]\{\};:'",<>\.\/?\\|`~]/;
 
 	if (!LOW_CASE.test(PASSWORD)) {
-			Error += 'Password must contain at least one lowercase letter. \n';
+		errorMsg += 'Password must contain at least one lowercase letter. \n';
 	}
 
 	if (!UP_CASE.test(PASSWORD)) {
-			Error += 'Password must contain at least one uppercase letter. \n';
+		errorMsg += 'Password must contain at least one uppercase letter. \n';
 	}
 
 	if (!NUMBERS.test(PASSWORD)) {
-			Error += 'Password must contain at least one number. \n';
+		errorMsg += 'Password must contain at least one number. \n';
 	}
 
 	if (!SPECIAL_CHARS.test(PASSWORD)) {
-			Error += 'Password must contain at least one special character. \n';
+		errorMsg += 'Password must contain at least one special character. \n';
 	}
 }

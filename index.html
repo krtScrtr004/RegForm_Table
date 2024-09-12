@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/form.css" />
     <link rel="stylesheet" href="styles/table.css" />
   </head>
@@ -111,8 +111,8 @@
                   id="pass"
                   name="pass"
                   placeholder="Password"
-                  min="12"
-                  max="256"
+                  min="8"
+                  max="64"
                   required
                 />
 
@@ -123,16 +123,14 @@
                   id="cPass"
                   name="cPass"
                   placeholder="Confirm Password"
-                  min="12"
-                  max="256"
+                  min="8"
+                  max="64"
                   required
                 />
 
-                <div class="button">
-                  <a href="#modal">
-                    <strong>SUBMIT</strong>
-                  </a>
-                </div>
+                <button id="submit_btn">
+                  <strong>SUBMIT</strong>
+                </button>
               </div>
             </fieldset>
           </form>
@@ -284,6 +282,6 @@
       </article>
     </main>
 
-    <script type="module" src=""></script>
+    <script type="module" src="script/index.js"></script>
   </body>
 </html>
