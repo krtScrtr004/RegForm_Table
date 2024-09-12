@@ -2,10 +2,11 @@
 // Create a handler when there is an error, do not allow display the modal
 
 let errorMsg = "";
-const allowedNameChars = /^[a-zA-Z\s'-]+$/; // Allow only letters, spaces, hyphens, and apostrophes
 
 // Event handler when submit button is clicked
 document.querySelectorAll(".button").addEventListener("click", () => {});
+
+const ALLOWED_NAME_CHARS = /^[a-zA-Z\s'-]+$/; // Allow only letters, spaces, hyphens, and apostrophes
 
 // First name validation
 function validateFname(NAME) {
@@ -15,7 +16,7 @@ function validateFname(NAME) {
     errorMsg += `First Name should be between ${MIN} and ${MAX} characters long. \n`;
   }
 
-  if (allowedNameChars.test(NAME)) {
+  if (ALLOWED_NAME_CHARS.test(NAME)) {
     errorMsg += "First Name contains disallowed characters. \n";
   }
 }
@@ -28,7 +29,7 @@ function validateLname(NAME) {
     errorMsg += `Last Name should be between ${MIN} and ${MAX} characters long. \n`;
   }
 
-  if (allowedNameChars.test(NAME)) {
+  if (ALLOWED_NAME_CHARS.test(NAME)) {
     errorMsg += "Last Name contains disallowed characters. \n";
   }
 }
@@ -39,12 +40,10 @@ function validateBdate(DAY, MONTH, YEAR) {
   const MIN_YEAR = 1900,
     MAX_YEAR = TODAY.getFullYear();
 
-  // Check if the year is within the valid range
   if (YEAR < MIN_YEAR || YEAR > MAX_YEAR) {
     errorMsg += `Birth date year must be between ${MIN_YEAR} and ${MAX_YEAR}. \n`;
   }
 
-  // Check if the month is valid
   if (MONTH < 1 || MONTH > 12) {
     errorMsg += "Birth date month must be between 1 and 12. \n";
   }
@@ -74,4 +73,35 @@ function validateEmail(EMAIL) {
 	if (!EMAIL_PATTERN.test(EMAIL)) {
     errorMsg += "Invalid email format. \n";
   }
+}
+
+// Password validation
+function validatePassword(PASSWORD) {
+	const MIN = 8;
+	const MAX = 64;
+	
+	if (PASSWORD.length < MIN_LENGTH || PASSWORD.length > MAX_LENGTH) {
+			alert(`Password must be between ${MIN} and ${MAX} characters.`);
+	}
+
+	const LOW_CASE = /[a-z]/;
+	const UP_CASE = /[A-Z]/;
+	const NUMBERS = /[0-9]/;
+	const SPECIAL_CHARS = /[!@#\$%\^&\*\(\)_\+\-=\[\]\{\};:'",<>\.\/?\\|`~]/;
+
+	if (!LOW_CASE.test(PASSWORD)) {
+			Error += 'Password must contain at least one lowercase letter. \n';
+	}
+
+	if (!UP_CASE.test(PASSWORD)) {
+			Error += 'Password must contain at least one uppercase letter. \n';
+	}
+
+	if (!NUMBERS.test(PASSWORD)) {
+			Error += 'Password must contain at least one number. \n';
+	}
+
+	if (!SPECIAL_CHARS.test(PASSWORD)) {
+			Error += 'Password must contain at least one special character. \n';
+	}
 }
