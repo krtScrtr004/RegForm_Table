@@ -126,11 +126,11 @@ main,
 
 .form-wrapper button {
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin: 2rem 0;
   background-color: var(--primary-yellow-color);
   border: none;
   border-radius: 3px;
@@ -138,6 +138,7 @@ main,
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 400;
+  cursor: pointer;
   transition: background-color 200ms linear 50ms,
     color 200ms linear 50ms,
     box-shadow 200ms linear 50ms;

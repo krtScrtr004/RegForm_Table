@@ -29,7 +29,7 @@ window.addEventListener(`click`, (event) => {
 
 const ALLOWED_NAME_CHARS = /^[a-zA-Z\s`-]+$/; // Allow only letters, spaces, hyphens, and apostrophes
 
-function submitInfo() {
+function submitInfo(event) {
   errorMsg = ``;
 
   const FNAME = document.querySelector(`#fName`).value;
@@ -62,6 +62,7 @@ function submitInfo() {
 
   if (errorMsg.length > 0) {
     alert(`Errors:\n\n${errorMsg}`);
+    event.preventDefault();
   } else {
 		MODAL.style.display = `flex`;
     MODAL.style.justifyContent = `center`;
