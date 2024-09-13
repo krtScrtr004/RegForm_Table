@@ -4,9 +4,31 @@ let errorMsg = "";
 const MODAL = document.querySelector("#modal");
 
 // Event handler when submit button is clicked
-document.querySelector("#submit_btn").addEventListener("click", (event) => { 
-	event.preventDefault();	// Prevent the form from being submitted
+document.querySelector("#submit_btn").addEventListener("click", submitInfo);
 
+addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    submitInfo();
+  }
+});
+
+// Modal close button
+document.querySelector('.close-btn').addEventListener('click', () => {
+  MODAL.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+  console.log(event.target);
+  if (event.target == MODAL) {
+    MODAL.style.display = 'none';
+  }
+});
+
+// UTILITY FUNCTIONS
+
+const ALLOWED_NAME_CHARS = /^[a-zA-Z\s'-]+$/; // Allow only letters, spaces, hyphens, and apostrophes
+
+function submitInfo() {
   const FNAME = document.querySelector("#fName").value;
   const LNAME = document.querySelector("#lName").value;
 
@@ -21,7 +43,7 @@ document.querySelector("#submit_btn").addEventListener("click", (event) => {
 
     validateBdate(BDATE_DAY, BDATE_MONTH, BDATE_YEAR);
   } else {
-    errorMsg += `Invalid date format`;
+    errorMsg += `Invalid date format \n`;
   }
 
   const EMAIL = document.querySelector("#email").value;
@@ -36,21 +58,13 @@ document.querySelector("#submit_btn").addEventListener("click", (event) => {
   }
 
   if (errorMsg.length > 0) {
-    alert(`Errors:\n${errorMsg}`);
+    alert(`Errors:\n\n${errorMsg}`);
   } else {
-		MODAL.style.display = "block";
+		MODAL.style.display = "flex";
+    MODAL.style.justifyContent = "center";
+    MODAL.style.alignItems = "center";
 	}
-});
-
-// Modal close button
-document.querySelector('.close-btn').addEventListener('click', function() {
-  MODAL.style.display = 'none';
-	location.reload();
-});
-
-// UTILITY FUNCTIONS
-
-const ALLOWED_NAME_CHARS = /^[a-zA-Z\s'-]+$/; // Allow only letters, spaces, hyphens, and apostrophes
+}
 
 // First name validation
 function validateFname(NAME) {
