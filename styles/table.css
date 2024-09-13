@@ -18,6 +18,7 @@
 #modal>section,
 #modal>section>table {
     border-radius: 5px;
+    max-height: 80%;
 }
 
 #modal {
@@ -28,11 +29,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow-y: auto;
 }
 
 #modal>section {
     width: 90%;
+    overflow-y: auto;
+
 }
 
 #modal>section>table {
